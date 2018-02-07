@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Validator</string>
+    <string name="validate_success">Validation success!</string>
+    <string name="validate_failure">Validation failed!</string>
 </resources>

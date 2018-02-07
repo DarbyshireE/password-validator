@@ -2,6 +2,8 @@ package com.example.elliott.validator;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 public class Validator extends AppCompatActivity {
 
@@ -9,6 +11,18 @@ public class Validator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_validator);
+
+        final TextView resultValidate = findViewById(R.id.resultValidate);
+        final TextView enterPass = findViewById(R.id.enterPass);
+
+        findViewById(R.id.validatePass).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                if (validate(enterPass.getText().toString()))
+                    resultValidate.setText(R.string.validate_success);
+                else
+                    resultValidate.setText(R.string.validate_failure);
+            }
+        });
     }
 
     public static boolean validate(String password)
